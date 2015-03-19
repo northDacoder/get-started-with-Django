@@ -23,6 +23,11 @@
             color: lime;
         }
 
+        p code {
+            color: #444;
+            font-weight: 500;
+        }
+
         p {
             font-size: 18px;
         }
@@ -87,7 +92,38 @@ source /usr/local/bin/virtualenvwrapper.sh
 <p>Now we are going to install a copy of Django that</p>
 <pre><code>$ pip install django</code></pre>
 <p>This will install the latest version of Django into our virtual environment, isolated from other installations or users on our computer</p>
-<pre><code></code></pre>
+<p>To double-check that we have successfully installed the latest version of Django, run the command below</p>
+<pre><code>$ which django-admin.py</code></pre>
+<p>It should return the path to your installation</p>
+<pre><code>/usr/local/bin/django-admin.py</code></pre>
+<hr>
+<h1>Step 6</h1>
+<p>Now that we are working in our virtual environment we can run the <code>django-admin.py startproject</code> command & give your <code>project</code> a name  </p>
+<pre><code>$ django-admin.py startproject django-starter</code></pre>
+<p>This is going to create the project structure for a new django project</p>
+<pre><code>django_project/
+    manage.py
+    django_project/
+        settings.py
+        urls.py
+        wsgi.py
+</code></pre>
+<p>To briefly explain what these files are doing:</p>
+<p>settings.py is just a python script that will manage all of the settings & configurations for our project</p>
+<p>As your project grows in size or at the point of launching it onto a hosted url, you will want to start separating the settings.py file into different files for your different environments</p>
+<p>For example:</p>
+<pre><code>django_project/
+    manage.py
+    django_project/
+        settings/
+            production.py
+            local_settings.py
+            settings.py
+            development.py
+            team.py
+</code></pre>
+<p>This will allow you to keep different settings when running your project locally on your localhost or local webserver & production settings when you are deploying your application to something like Heroku, AWS, Docker, etc.</p>
+<hr>
 <p>For individual instruction please contact me directly <a href="mailto:northdacoder@gmail.com">northdacoder@gmail.com</a></p>
       </section>
       <footer>
