@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="stylesheets/styles.css">
     <link rel="stylesheet" href="stylesheets/pygment_trac.css">
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
     <!--[if lt IE 9]>
     <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
@@ -26,13 +27,18 @@
             background: #333;
             background: rgba(8,45,32,1);
             color: rgba(255,255,255,.5);
+            color: #FCFFF5;
         }
         pre {
+            padding: 20px;
+            -moz-box-shadow:    inset 0 0 10px rgba(0,0,0,.6);
+            -webkit-box-shadow: inset 0 0 10px rgba(0,0,0,.6);
+            box-shadow:         inset 0 0 10px rgba(0,0,0,.6);
             margin-top: 50px;
             margin-bottom: 50px;
             background: #444;
             border: none;
-            border-radius: 2px;
+            border-radius: 5px;
             background: #193441;
             color: lime;
         }
@@ -59,11 +65,11 @@
         <center><img src="img/django.png" style="width: 300px; height: auto;"></center>
         <p></p>
 
-        <p class="view"><a href="https://github.com/northDacoder/get-started-with-django">view on GitHub <small>northDacoder/get-started-with-Django</small></a></p>
+        <p class="view"><a href="https://github.com/northDacoder/get-started-with-django">view on <i class="fa fa-github"></i> GitHub <small>northDacoder/get-started-with-Django</small></a></p>
 
 
         <ul>
-          <li><a href="https://github.com/northDacoder/get-started-with-django">View On <strong>GitHub</strong></a></li>
+          <a href="https://github.com/northDacoder/get-started-with-django">View On <strong><i class="fa fa-github"></i> GitHub</strong></a>
         </ul>
       </header>
       <section>
@@ -76,8 +82,8 @@ As you start to build multiple web applications that each rely on different vers
 This is usually the point in which you google your brain out until StackOverflow recommends to add a virtual environment to your project workflow.
 <br><br>Rather than let you go through the painful realization that you should have set things up this way from the start,
 I will save you the trouble & tell you to start using <strong><a href="http://virtualenvwrapper.readthedocs.org/en/latest/">virtualenvwrapper</a> & <a href="https://pypi.python.org/pypi/virtualenv">vitualenv</a></strong> right from the start.</p>
-
-<h2><strong>Umm... Hmpppf... Arghhhh... ok. <br>What do you mean by virtual environment? </strong></h2>
+<br><br>
+<h3>Umm... Hmpppf... Arghhhh... ok. <br>What do you mean by virtual environment?</h3><br>
 <p>A <strong>virtual environment</strong> is a way to create isolated <strong>Python</strong> environments.  This solves the problem of dependencies, versions, & indirect permissions. Different projects will require different dependencies & it is best to keep them separate so you are only working on one isolated Python environment at a time.</p>
 <hr>
 <h1>Step 1</h1>
