@@ -26,9 +26,16 @@
             background: #eee;
             background: #333;
             background: rgba(8,45,32,1);
+            background: #eee;
             color: rgba(255,255,255,.5);
             color: #FCFFF5;
+            color: #444;
         }
+
+        h1, h2, h3, h4, h5 {
+            font-weight: 100;
+        }
+
         pre {
             padding: 20px;
             -moz-box-shadow:    inset 0 0 10px rgba(0,0,0,.6);
@@ -56,6 +63,21 @@
             font-size: 18px;
         }
 
+        .panel {
+            border-radius: 0; box-shadow: 0 0 5px rgba(0,0,0,.4);
+            color: #444;
+            padding: 20px;
+        }
+
+        .panel a {
+            color: #333;
+            font-weight: 500;
+        }
+
+        hr.green {
+            border: 1px dashed rgba(8,45,32,1);
+        }
+
     </style>
   </head>
   <body>
@@ -75,24 +97,29 @@
       <section>
         <h3>
 <a id="welcome-to-github-pages" class="anchor" href="#welcome-to-github-pages" aria-hidden="true"><span class="octicon octicon-link"></span></a></h3>
-<h1>Django-tip #1: Take your advil before the Django headache starts?</h1>
-<p>Before installing <strong>Django</strong>, we want to setup a few things that will save us major headaches down the road.
-Jumping right in by installing multiple packages directly into your project runs some serious risks of dependency issues as your project evolves.<br><br>
-As you start to build multiple web applications that each rely on different versions of different packages, things can quickly get out of whack if you are not working with virtual environments.
-This is usually the point in which you google your brain out until StackOverflow recommends to add a virtual environment to your project workflow.
-<br><br>Rather than let you go through the painful realization that you should have set things up this way from the start,
-I will save you the trouble & tell you to start using <strong><a href="http://virtualenvwrapper.readthedocs.org/en/latest/">virtualenvwrapper</a> & <a href="https://pypi.python.org/pypi/virtualenv">vitualenv</a></strong> right from the start.</p>
-<br><br>
-<h3>Umm... Hmpppf... Arghhhh... ok. <br>What do you mean by virtual environment?</h3><br>
-<p>A <strong>virtual environment</strong> is a way to create isolated <strong>Python</strong> environments.  This solves the problem of dependencies, versions, & indirect permissions. Different projects will require different dependencies & it is best to keep them separate so you are only working on one isolated Python environment at a time.</p>
-<hr>
-<h1>Step 1</h1>
-<p>To install both <strong>virtualenv & virtualenvwrapper</strong> run the following command in the shell of your choice</p>
-<pre><code>$ pip install virtualenvwrapper
-</code></pre>
+<div class="panel">
+<h1 class="text-center">Before we get started</h1>
+    <p>Before installing <strong>Django</strong>, we want to setup a few things that will save us major headaches down the road.
+    Installing multiple packages directly into your project runs some serious risks of dependency issues as your project evolves.<br><br>
+    As you start to build multiple web applications, each relying on different versions of different packages, things can quickly get out of whack.  This is especially true for those that are not taking advantage of using virtual environments.
+    This is usually the point in which you google your brain out until <a href="https://www.stackoverflow">StackOverflow</a> recommends to add a virtual environment to your project workflow.
+    <br><br>Even though there is value to learning from your own mistakes, this is on that is a better lesson to learn before starting.
+    Utilizing <strong><a href="http://virtualenvwrapper.readthedocs.org/en/latest/">virtualenvwrapper</a> & <a href="https://pypi.python.org/pypi/virtualenv">vitualenv</a></strong> will save you huge headaches down the road.</p>
+<br>
+<br>
+<h3>Umm... Hmpppf... Arghhhh... ok. <br>What do you mean by virtual environment?</h3>
+<br>
+    <p>A <strong>virtual environment</strong> is a way to create isolated <strong>Python</strong> environments.  This solves the problem of dependencies, versions, & indirect permissions. Different projects will require different dependencies & it is best to keep them separate so you are only working on one isolated Python environment at a time.</p>
+    <br>
+    <hr class="green">
+    <h1>Step 1</h1>
+    <p>To install both <strong>virtualenv & virtualenvwrapper</strong> run the following command in the shell of your choice</p>
+    <pre><code>$ pip install virtualenvwrapper
+    </code></pre>
 
-<p>After you've successfully installed <strong>virtualenvwrapper & virtualenv</strong> add the following lines to the startup file for whatever shell (terminal) you are using </p>
-<hr>
+    <p>After you've successfully installed <strong>virtualenvwrapper & virtualenv</strong> add the following lines to the startup file for whatever shell (terminal) you are using </p>
+    <br>
+    <hr class="green">
 <h1>Step 2</h1>
 <pre><code>export WORKON_HOME=$HOME/.virtualenvs
 export PROJECT_HOME=$HOME/directory-you-do-development-in
@@ -100,18 +127,21 @@ source /usr/local/bin/virtualenvwrapper.sh
 </code></pre>
 
 <p>Close out of your shell & re-open.  This will load everything you need to get started using virtualenvwrapper</p>
-<hr>
+<br>
+<hr class="green">
 <h1>Step 3</h1>
 <p>Let's create our first virtual environment by running <strong>mkvirtualenv</strong> along with a name for this virtual environment</p>
 <pre><code>$ mkvirtualenv DJANGOVIRTUALENV1
 </code></pre>
 <p>In this example I named my virtual environment "DJANGOVIRTUALENV1", but you can name yours whatever you want.</p>
-<hr>
+<br>
+<hr class="green">
 <h1>Step 4</h1>
 <p>This should prepend the name of your virtual environment in parenthesis at the beginning of your shell</p>
 <pre><code>(DJANGOVIRTUALENV1)</code></pre>
 <p>To stop your virtual environment, run the command <strong>deactivate</strong></p>
-<hr>
+<br>
+<hr class="green">
 <h1>Step 5</h1>
 <p>Now we are going to install a copy of Django that</p>
 <pre><code>$ pip install django</code></pre>
@@ -120,7 +150,8 @@ source /usr/local/bin/virtualenvwrapper.sh
 <pre><code>$ which django-admin.py</code></pre>
 <p>It should return the path to your installation</p>
 <pre><code>/usr/local/bin/django-admin.py</code></pre>
-<hr>
+<br>
+<hr class="green">
 <h1>Step 6</h1>
 <p>Now that we are working in our virtual environment we can run the <code>django-admin.py startproject</code> command & give your <code>project</code> a name  </p>
 <pre><code>$ django-admin.py startproject django-starter</code></pre>
@@ -135,7 +166,6 @@ source /usr/local/bin/virtualenvwrapper.sh
 <p>To briefly explain what these files are doing:</p>
 <p>settings.py is just a python script that will manage all of the settings & configurations for our project</p>
 <p>As your project grows in size or at the point of launching it onto a hosted url, you will want to start separating the settings.py file into different files for your different environments</p>
-<p>For example:</p>
 <pre><code>django_project/
     manage.py
     django_project/
@@ -147,9 +177,10 @@ source /usr/local/bin/virtualenvwrapper.sh
             team.py
 </code></pre>
 <p>This will allow you to keep different settings when running your project locally on your localhost or local webserver & production settings when you are deploying your application to something like Heroku, AWS, Docker, etc.</p>
-<hr>
-<p>For individual instruction please contact me directly <a href="mailto:northdacoder@gmail.com">northdacoder@gmail.com</a></p>
-      </section>
+<hr class="green"><hr class="green">
+<p>For individual coding classes please contact me directly <a href="mailto:northdacoder@gmail.com">northdacoder@gmail.com</a></p>
+</div>
+     </section>
       <footer>
         <p>This project is maintained by <a href="https://github.com/northDacoder">northDacoder</a></p>
       </footer>
